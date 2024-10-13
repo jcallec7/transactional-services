@@ -1,0 +1,45 @@
+version: '3'
+services:
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    ports:
+      - "8081:7071"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://client-db:5432/clients
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=postgres2025
+    depends_on:
+      - client-db
+
+  account:
+    build:
+      context: ./account
+      dockerfile: Dockerfile
+    ports:
+      - "8082:7072"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://account-db:5432/accounts
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=postgres2025
+    depends_on:
+      - account-db
+
+  client-db:
+    image: postgres
+    environment:
+      - POSTGRES_DB=clients
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres2025
+    ports:
+      - "5433:5432"
+
+  account-db:
+    image: postgres
+    environment:
+      - POSTGRES_DB=accounts
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres2025
+    ports:
+      - "5434:5432"
