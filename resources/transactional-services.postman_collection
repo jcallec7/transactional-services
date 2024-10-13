@@ -1,0 +1,298 @@
+{
+	"info": {
+		"_postman_id": "2481187f-799c-4057-9b7e-1a5b27fd9557",
+		"name": "Transactional Services",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14417299"
+	},
+	"item": [
+		{
+			"name": "client",
+			"item": [
+				{
+					"name": "createClient",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Juan Calle\",\r\n    \"gender\": \"Masculino\",\r\n    \"age\": 20,\r\n    \"identification\": \"0102358272\",\r\n    \"address\": \"Cuenca\",\r\n    \"phoneNumber\": \"0984124026\",\r\n    \"password\": \"juan12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7071/api/clientes/crear",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7071",
+							"path": [
+								"api",
+								"clientes",
+								"crear"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getClient",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7071/api/clientes/obtenerPorId/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7071",
+							"path": [
+								"api",
+								"clientes",
+								"obtenerPorId",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateClient",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"clientId\": \"CLI-0107166555\",\r\n    \"identification\": \"0107166555\",\r\n    \"name\": \"Jose Calle\",\r\n    \"gender\": \"Masculino\",\r\n    \"age\": 19,\r\n    \"address\": \"Cuenca\",\r\n    \"phoneNumber\": \"0979376626\",\r\n    \"password\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7071/api/clientes/actualizar/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7071",
+							"path": [
+								"api",
+								"clientes",
+								"actualizar",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteClient",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7071/api/clientes/eliminar/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7071",
+							"path": [
+								"api",
+								"clientes",
+								"eliminar",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "account",
+			"item": [
+				{
+					"name": "createAccount",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"accountNumber\": \"2202563322\",\r\n    \"accountType\": 2,\r\n    \"balance\": 0,\r\n    \"clientId\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7072/api/cuentas/crear",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7072",
+							"path": [
+								"api",
+								"cuentas",
+								"crear"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAccount",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7072/api/cuentas/obtenerPorId/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7072",
+							"path": [
+								"api",
+								"cuentas",
+								"obtenerPorId",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateAccount",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"accountNumber\": \"2202653200\",\r\n    \"clientId\": 1,\r\n    \"accountType\": 2,\r\n    \"balance\": 30000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7072/api/cuentas/actualizar/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7072",
+							"path": [
+								"api",
+								"cuentas",
+								"actualizar",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteAccount",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7072/api/cuentas/eliminar/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7072",
+							"path": [
+								"api",
+								"cuentas",
+								"eliminar",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "transaction",
+			"item": [
+				{
+					"name": "createTransaction",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\":1,\r\n    \"amount\":25,\r\n    \"accountId\":2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7072/api/movimientos/crear",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7072",
+							"path": [
+								"api",
+								"movimientos",
+								"crear"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAccountStatements",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7072/api/movimientos/reportes/obtenerPorCliente/1?startDate=2024-10-10&endDate=2024-10-13",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7072",
+							"path": [
+								"api",
+								"movimientos",
+								"reportes",
+								"obtenerPorCliente",
+								"1"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "2024-10-10"
+								},
+								{
+									"key": "endDate",
+									"value": "2024-10-13"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
